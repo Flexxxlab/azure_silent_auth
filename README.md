@@ -75,4 +75,3 @@ Please refer main.dart in the example app to see how this instance can be used i
 
 - Contributions: Contributions are welcome! Open an issue or submit a pull request.
 - issues: If you encounter any issues, please feel free to reach out to **Email:** irshad365@gmail.com
-- License: This package is released under MIT
