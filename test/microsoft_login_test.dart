@@ -7,14 +7,14 @@ import 'mock/mock_storage_provider.dart';
 
 void main() {
   group('AzureAuth', () {
-    late AzureAuth microsoftLogin;
+    late AzureAuth azureAuth;
     late StorageProvider mockStorageProvider;
     late AuthenticatorProvider mockAuthenticatorProvider;
     setUp(() {
       mockStorageProvider = MockStorageProvider({});
       mockAuthenticatorProvider = MockAuthenticatorProvider();
 
-      microsoftLogin = AzureAuth(
+      azureAuth = AzureAuth(
         authenticatorProvider: mockAuthenticatorProvider,
         storageProvider: mockStorageProvider,
       );
@@ -22,7 +22,7 @@ void main() {
 
     test('login - successful', () async {
       // Your AzureAuth login logic
-      await microsoftLogin.login();
+      await azureAuth.login();
 
       // Verifying that MockStorageProvider methods were called as expected
       expect(await mockStorageProvider.isTokenSavedLocally(), true);
@@ -31,7 +31,7 @@ void main() {
 
     test('logout - successful', () async {
       // Your AzureAuth logout logic
-      await microsoftLogin.logout();
+      await azureAuth.logout();
 
       // Verifying that MockStorageProvider methods were called as expected
       expect(await mockStorageProvider.isTokenSavedLocally(), false);
@@ -40,18 +40,18 @@ void main() {
 
     test('getAccessToken - isNotNull when loggedin', () async {
       // Your AzureAuth login logic
-      await microsoftLogin.login();
+      await azureAuth.login();
 
       // Verifying that accessToken is not empty
-      expect(await microsoftLogin.getAccessToken(), isNotNull);
+      expect(await azureAuth.getAccessToken(), isNotNull);
     });
 
     test('getAccessToken - isNull when loggedout', () async {
       // Your AzureAuth login logic
-      await microsoftLogin.logout();
+      await azureAuth.logout();
 
       // Verifying that accessToken is not empty
-      expect(await microsoftLogin.getAccessToken(), isNull);
+      expect(await azureAuth.getAccessToken(), isNull);
     });
   });
 }

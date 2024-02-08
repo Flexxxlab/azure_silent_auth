@@ -1,39 +1,78 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Azure Silent Login
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package for seamless integration with Azure authentication and Silent Login.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Azure Authentication:** Integration with Azure authentication including login, logout, and silent login.
+- **Secure Storage:** Securely store and manage tokens and user data.
+- **Silent Login:** Provides silent login functionality which saves developers time.
+- **Useful for Offline Applications:** Silent login functionality is particularly useful for offline applications where continuous user authentication may not be possible.
+- **Token Management:** Automatically manages token expiration and refreshing.
+
+### Explanation:
+
+1. **First-Time Login:**
+   - When the user opens the app for the first time, call `AzureAuth->Login()` to open the authentication page.
+   - Upon successful login, the token is securely stored.
+   
+2. **Token Retrieval:**
+   - When the app needs the token, call `AzureAuth->getAccessToken()`.
+   - The token's validity is checked; if expired, it is automatically refreshed.
+   
+3. **Silent Login:**
+   - Use `AzureAuth->silentLogin()` when the app is opened again.
+   - The stored token is validated in the background without redirecting the user to the authentication page.
+   - If the token is invalid or expired, an error is thrown, allowing developers to redirect the user to the login screen.
+   
+4. **Logout:**
+   - Call `AzureAuth->logout()` to clear all locally stored token and user data.
+   - Sends a request to the OpenID Provider to log out the End-User.
+
+### Documentation
+
+Explore the documentation to learn more.
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add the following dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  azure_silent_auth: ^1.0.0
+```
+
+Then, run:
+
+```bash
+flutter pub get
+```
+### Prerequisites
+
+Flutter: Your app should use Flutter framework.
+Dart: Your app should use Dart programming language.
+
+### Platform
+
+Tested in Windows and iOS, Should work on Android too.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+  AzureAuth _azureAuth = AzureAuth(
+    authenticatorProvider: DefaultAuthenticator(
+      'https://login.microsoftonline.com/{tenant-id}/',
+      ["openId", "offline_access"],
+      '{client-id}',
+      '&prompt=select_account',
+      {nnnn}, // Redirect URI's port in Azure app registration authentication (http://localhost:nnnn/)
+    ),
+  );
 ```
-
+Please refer main.dart in the example app to see how this instance can be used in different scenarios.
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- Contributions: Contributions are welcome! Open an issue or submit a pull request.
+- issues: If you encounter any issues, please feel free to reach out to **Email:** irshad365@gmail.com
+- License: This package is released under MIT

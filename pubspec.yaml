@@ -1,6 +1,6 @@
 name: azure_silent_auth
 description: A Flutter package for handling silent authentication using azure backend
-version: 0.0.1
+version: 1.0.0
 
 environment:
   sdk: ">=3.1.2 <4.0.0"
