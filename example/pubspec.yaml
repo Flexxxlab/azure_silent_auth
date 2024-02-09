@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   azure_silent_auth:
-    path: ../../
+    path: ../
   provider: ^6.1.1
 
 dev_dependencies:

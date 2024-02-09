@@ -28,7 +28,7 @@ packages:
   azure_silent_auth:
     dependency: "direct main"
     description:
-      path: "../.."
+      path: ".."
       relative: true
     source: path
     version: "1.0.0"
