@@ -1,0 +1,21 @@
+name: BuildAndUnitTest
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v2.3.4
+     - uses: subosito/flutter-action@v1.5.3
+     - name: Install packages
+       run: flutter pub get
+      # - name: Run generator - Add this if needed for your project.
+      #   run: flutter pub run build_runner build
+     - name: Run test
+       run: flutter test test
