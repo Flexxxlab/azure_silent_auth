@@ -1,6 +1,6 @@
 name: azure_silent_auth
 description: A Flutter package for handling silent authentication using azure backend
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/irshad365/azure_silent_auth
 homepage: https://irshad365.github.io/azure_silent_auth/
 platforms:
@@ -8,15 +8,15 @@ platforms:
   windows:
 
 environment:
-  sdk: ">=3.1.2 <4.0.0"
+  sdk: ">=3.2.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  desktop_webview_window: ^0.1.0
-  flutter_secure_storage: ^8.0.0
-  http: ^0.13.5
+  desktop_webview_window: ^0.2.3
+  flutter_secure_storage: ^9.0.0
+  http: ^1.2.0
   openid_client: ^0.4.7
   url_launcher: ^6.1.14
   path_provider: ^2.0.14
@@ -24,6 +24,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:

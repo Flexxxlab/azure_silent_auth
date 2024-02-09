@@ -1,10 +1,10 @@
 # This is a generated file; do not edit or check into version control.
-desktop_webview_window=/Users/irshad/.pub-cache/hosted/pub.dev/desktop_webview_window-0.1.6/
-flutter_secure_storage=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage-8.1.0/
+desktop_webview_window=/Users/irshad/.pub-cache/hosted/pub.dev/desktop_webview_window-0.2.3/
+flutter_secure_storage=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.0.0/
 flutter_secure_storage_linux=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage_linux-1.2.0/
 flutter_secure_storage_macos=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage_macos-3.0.1/
 flutter_secure_storage_web=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage_web-1.1.2/
-flutter_secure_storage_windows=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage_windows-2.1.1/
+flutter_secure_storage_windows=/Users/irshad/.pub-cache/hosted/pub.dev/flutter_secure_storage_windows-3.0.0/
 path_provider=/Users/irshad/.pub-cache/hosted/pub.dev/path_provider-2.1.2/
 path_provider_android=/Users/irshad/.pub-cache/hosted/pub.dev/path_provider_android-2.2.2/
 path_provider_foundation=/Users/irshad/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.2/
