@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 7.0.0-dev">
+  <meta name="description" content="azure_silent_auth API docs, for the Dart programming language.">
+  <title>azure_silent_auth - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">azure_silent_auth package</li>
+  </ol>
+  <div class="self-name">azure_silent_auth</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="azure-silent-login">Azure Silent Login</h1>
+<p>A Flutter package for seamless integration with Azure authentication and Silent Login.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Azure Authentication:</strong> Integration with Azure authentication including login, logout, and silent login.</li>
+<li><strong>Secure Storage:</strong> Securely store and manage tokens and user data.</li>
+<li><strong>Silent Login:</strong> Provides silent login functionality which saves developers time.</li>
+<li><strong>Useful for Offline Applications:</strong> Silent login functionality is particularly useful for offline applications where continuous user authentication may not be possible.</li>
+<li><strong>Token Management:</strong> Automatically manages token expiration and refreshing.</li>
+</ul>
+<h3 id="explanation">Explanation:</h3>
+<ol>
+<li>
+<p><strong>First-Time Login:</strong></p>
+<ul>
+<li>When the user opens the app for the first time, call <code>AzureAuth-&gt;Login()</code> to open the authentication page.</li>
+<li>Upon successful login, the token is securely stored.</li>
+</ul>
+</li>
+<li>
+<p><strong>Token Retrieval:</strong></p>
+<ul>
+<li>When the app needs the token, call <code>AzureAuth-&gt;getAccessToken()</code>.</li>
+<li>The token's validity is checked; if expired, it is automatically refreshed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Silent Login:</strong></p>
+<ul>
+<li>Use <code>AzureAuth-&gt;silentLogin()</code> when the app is opened again.</li>
+<li>The stored token is validated in the background without redirecting the user to the authentication page.</li>
+<li>If the token is invalid or expired, an error is thrown, allowing developers to redirect the user to the login screen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Logout:</strong></p>
+<ul>
+<li>Call <code>AzureAuth-&gt;logout()</code> to clear all locally stored token and user data.</li>
+<li>Sends a request to the OpenID Provider to log out the End-User.</li>
+</ul>
+</li>
+</ol>
+<h3 id="documentation">Documentation</h3>
+<p>Explore the documentation to learn more.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>To use this package, add the following dependency to your <code>pubspec.yaml</code> file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  azure_silent_auth: ^1.0.0
+</code></pre>
+<p>Then, run:</p>
+<pre class="language-bash"><code class="language-bash">flutter pub get
+</code></pre>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Flutter: Your app should use Flutter framework.
+Dart: Your app should use Dart programming language.</p>
+<h3 id="platform">Platform</h3>
+<p>Tested in Windows and iOS, Should work on Android too.</p>
+<h2 id="usage">Usage</h2>
+<pre class="language-dart"><code class="language-dart">  AzureAuth _azureAuth = AzureAuth(
+    authenticatorProvider: DefaultAuthenticator(
+      'https://login.microsoftonline.com/{tenant-id}/',
+      ["openId", "offline_access"],
+      '{client-id}',
+      '&amp;prompt=select_account',
+      {nnnn}, // Redirect URI's port in Azure app registration authentication (http://localhost:nnnn/)
+    ),
+  );
+</code></pre>
+<p>Please refer main.dart in the example app to see how this instance can be used in different scenarios.</p>
+<h2 id="additional-information">Additional information</h2>
+<ul>
+<li>Contributions: Contributions are welcome! Open an issue or submit a pull request.</li>
+<li>issues: If you encounter any issues, please feel free to reach out to <strong>Email:</strong> <a href="mailto:irshad365@gmail.com">irshad365@gmail.com</a></li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="authenticated_client">
+  <span class="name"><a href="authenticated_client/authenticated_client-library.html">authenticated_client</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="authenticator_provider">
+  <span class="name"><a href="authenticator_abstract_authenticator_provider/authenticator_abstract_authenticator_provider-library.html">authenticator_provider</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="azure_silent_auth">
+  <span class="name"><a href="azure_silent_auth/azure_silent_auth-library.html">azure_silent_auth</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="default_authenticator">
+  <span class="name"><a href="authenticator_default_authenticator/authenticator_default_authenticator-library.html">default_authenticator</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="default_storage">
+  <span class="name"><a href="storage_default_storage/storage_default_storage-library.html">default_storage</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="pc_authenticator">
+  <span class="name"><a href="authenticator_pc_authenticator/authenticator_pc_authenticator-library.html">pc_authenticator</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="storage_provider">
+  <span class="name"><a href="storage_abstract_storage_provider/storage_abstract_storage_provider-library.html">storage_provider</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="token_provider">
+  <span class="name"><a href="authenticator_abstract_token_provider/authenticator_abstract_token_provider-library.html">token_provider</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">azure_silent_auth package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">azure_silent_auth</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="authenticated_client/authenticated_client-library.html">authenticated_client</a></li>
+      <li><a href="authenticator_abstract_authenticator_provider/authenticator_abstract_authenticator_provider-library.html">authenticator_provider</a></li>
+      <li><a href="azure_silent_auth/azure_silent_auth-library.html">azure_silent_auth</a></li>
+      <li><a href="authenticator_default_authenticator/authenticator_default_authenticator-library.html">default_authenticator</a></li>
+      <li><a href="storage_default_storage/storage_default_storage-library.html">default_storage</a></li>
+      <li><a href="authenticator_pc_authenticator/authenticator_pc_authenticator-library.html">pc_authenticator</a></li>
+      <li><a href="storage_abstract_storage_provider/storage_abstract_storage_provider-library.html">storage_provider</a></li>
+      <li><a href="authenticator_abstract_token_provider/authenticator_abstract_token_provider-library.html">token_provider</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    azure_silent_auth
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
