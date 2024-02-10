@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the deleteToken method from the DefaultStorage class, for the Dart programming language.">
-  <title>deleteToken method - DefaultStorage class - default_storage library - Dart API</title>
+  <meta name="description" content="API docs for the getUserInfo method from the DefaultStorage class, for the Dart programming language.">
+  <title>getUserInfo method - DefaultStorage class - default_storage library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
     <li><a href="../../index.html">azure_silent_auth</a></li>
     <li><a href="../../storage_default_storage/storage_default_storage-library.html">default_storage</a></li>
     <li><a href="../../storage_default_storage/DefaultStorage-class.html">DefaultStorage</a></li>
-    <li class="self-crumb">deleteToken method</li>
+    <li class="self-crumb">getUserInfo method</li>
   </ol>
-  <div class="self-name">deleteToken</div>
+  <div class="self-name">getUserInfo</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -57,7 +57,7 @@
       data-above-sidebar="storage_default_storage&#47;DefaultStorage-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">deleteToken</span> method 
+<h1><span class="kind-method">getUserInfo</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
@@ -68,15 +68,20 @@
     </ol>
   </div>
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">deleteToken</span>(<wbr>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>&gt;</span></span>
+<span class="name ">getUserInfo</span>(<wbr>)
 
       <div class="features"><span class="feature">override</span></div>
 
     </section>
     
 <section class="desc markdown">
-  <p>Deletes the locally stored access token.</p>
+  <p>Reads the stored user info from secure storage.</p>
+<p>Returns the stored user info or <code>null</code> if not found.
+which can be encoded into <code>OpenIdClaims</code>
+using <code>jsonDecode()</code> and <code>OpenIdClaims.fromJson()</code>.
+<code>OpenIdClaims</code> implements <code>UserInfo</code> wher you will find
+all the information about the logged in user</p>
 </section>
 
 
@@ -84,8 +89,8 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;void&gt; deleteToken() async {
-  await _storage.delete(key: tokenResponseKey);
+Future&lt;String?&gt; getUserInfo() async {
+  return await _storage.read(key: userNameKey);
 }</code></pre>
 </section>
 
@@ -104,7 +109,7 @@ Future&lt;void&gt; deleteToken() async {
     <li><a href="../../index.html">azure_silent_auth</a></li>
     <li><a href="../../storage_default_storage/storage_default_storage-library.html">default_storage</a></li>
     <li><a href="../../storage_default_storage/DefaultStorage-class.html">DefaultStorage</a></li>
-    <li class="self-crumb">deleteToken method</li>
+    <li class="self-crumb">getUserInfo method</li>
 </ol>
 
 

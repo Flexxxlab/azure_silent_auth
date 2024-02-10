@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the deleteToken method from the DefaultStorage class, for the Dart programming language.">
-  <title>deleteToken method - DefaultStorage class - default_storage library - Dart API</title>
+  <meta name="description" content="API docs for the setUserInfo method from the StorageProvider class, for the Dart programming language.">
+  <title>setUserInfo method - StorageProvider class - storage_provider library - Dart API</title>
 
 
   
@@ -29,11 +29,11 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">azure_silent_auth</a></li>
-    <li><a href="../../storage_default_storage/storage_default_storage-library.html">default_storage</a></li>
-    <li><a href="../../storage_default_storage/DefaultStorage-class.html">DefaultStorage</a></li>
-    <li class="self-crumb">deleteToken method</li>
+    <li><a href="../../storage_abstract_storage_provider/storage_abstract_storage_provider-library.html">storage_provider</a></li>
+    <li><a href="../../storage_abstract_storage_provider/StorageProvider-class.html">StorageProvider</a></li>
+    <li class="self-crumb">setUserInfo abstract method</li>
   </ol>
-  <div class="self-name">deleteToken</div>
+  <div class="self-name">setUserInfo</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,39 +54,32 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="storage_default_storage&#47;DefaultStorage-class-sidebar.html"
+      data-above-sidebar="storage_abstract_storage_provider&#47;StorageProvider-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">deleteToken</span> method 
+<h1><span class="kind-method">setUserInfo</span> abstract method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">deleteToken</span>(<wbr>)
+<span class="name ">setUserInfo</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setUserInfo-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span></span></li>
+</ol>)
 
-      <div class="features"><span class="feature">override</span></div>
+      
 
     </section>
     
 <section class="desc markdown">
-  <p>Deletes the locally stored access token.</p>
+  <p>Sets the user info locally.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-Future&lt;void&gt; deleteToken() async {
-  await _storage.delete(key: tokenResponseKey);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; setUserInfo(String? name);</code></pre>
 </section>
 
 
@@ -102,13 +95,13 @@ Future&lt;void&gt; deleteToken() async {
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">azure_silent_auth</a></li>
-    <li><a href="../../storage_default_storage/storage_default_storage-library.html">default_storage</a></li>
-    <li><a href="../../storage_default_storage/DefaultStorage-class.html">DefaultStorage</a></li>
-    <li class="self-crumb">deleteToken method</li>
+    <li><a href="../../storage_abstract_storage_provider/storage_abstract_storage_provider-library.html">storage_provider</a></li>
+    <li><a href="../../storage_abstract_storage_provider/StorageProvider-class.html">StorageProvider</a></li>
+    <li class="self-crumb">setUserInfo abstract method</li>
 </ol>
 
 
-    <h5>DefaultStorage class</h5>
+    <h5>StorageProvider class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 
