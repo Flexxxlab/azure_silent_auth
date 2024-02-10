@@ -1,7 +1,7 @@
-import 'package:app/screen1.dart';
+import 'package:app/authentication_handler.dart';
+import 'package:app/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:azure_silent_auth/authenticator/default_authenticator.dart';
-import 'package:azure_silent_auth/azure_silent_auth.dart';
+
 import 'package:azure_silent_auth/storage/default_storage.dart';
 
 void main() async {
@@ -26,39 +26,6 @@ class MyApp extends StatelessWidget {
           ? const HomeScreen(silentLogin: true)
           : const LoginScreen(),
     );
-  }
-}
-
-class AuthenticationHandler {
-  static final AuthenticationHandler _instance =
-      AuthenticationHandler._internal();
-
-  factory AuthenticationHandler() {
-    return _instance;
-  }
-
-  AuthenticationHandler._internal();
-
-  final AzureAuth _microsoftAuthenticator = AzureAuth(
-    authenticatorProvider: DefaultAuthenticator(
-      'https://login.microsoftonline.com/{tenant-id}/',
-      ["openId", "offline_access"],
-      '{client-id}',
-      '&prompt=select_account',
-      3000, // localhost redirect uri port
-    ),
-  );
-
-  Future<void> login() async {
-    await _microsoftAuthenticator.login();
-  }
-
-  Future<void> silentLogin() async {
-    await _microsoftAuthenticator.silentLogin();
-  }
-
-  Future<void> logout() async {
-    await _microsoftAuthenticator.logout();
   }
 }
 

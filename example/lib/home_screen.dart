@@ -1,8 +1,9 @@
+import 'package:app/authentication_handler.dart';
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Screen1ViewModel extends ChangeNotifier {
+class HomeScreenViewModel extends ChangeNotifier {
   bool _silentLoginInProgress = false;
 
   bool get silentLoginInProgress => _silentLoginInProgress;
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => Screen1ViewModel(),
+      create: (context) => HomeScreenViewModel(),
       child: _Screen1Content(silentLogin: silentLogin),
     );
   }
@@ -49,12 +50,12 @@ class _Screen1Content extends StatefulWidget {
 }
 
 class _Screen1ContentState extends State<_Screen1Content> {
-  late Screen1ViewModel viewModel;
+  late HomeScreenViewModel viewModel;
 
   @override
   void initState() {
     super.initState();
-    viewModel = Provider.of<Screen1ViewModel>(context, listen: false);
+    viewModel = Provider.of<HomeScreenViewModel>(context, listen: false);
     if (widget.silentLogin) {
       viewModel.silentLogin(context, () {
         _navigateToScreen0(context);
@@ -84,7 +85,7 @@ class _Screen1ContentState extends State<_Screen1Content> {
         ],
       ),
       body: Center(
-        child: Consumer<Screen1ViewModel>(
+        child: Consumer<HomeScreenViewModel>(
           builder: (context, viewModel, child) {
             if (viewModel.silentLoginInProgress) {
               return const CircularProgressIndicator();
