@@ -26,7 +26,7 @@ void main() {
 
       // Verifying that MockStorageProvider methods were called as expected
       expect(await mockStorageProvider.isTokenSavedLocally(), true);
-      expect(await mockStorageProvider.getUserName(), isNotEmpty);
+      expect(await mockStorageProvider.getUserInfo(), isNotEmpty);
     });
 
     test('logout - successful', () async {
@@ -35,7 +35,7 @@ void main() {
 
       // Verifying that MockStorageProvider methods were called as expected
       expect(await mockStorageProvider.isTokenSavedLocally(), false);
-      expect(await mockStorageProvider.getUserName(), null);
+      expect(await mockStorageProvider.getUserInfo(), null);
     });
 
     test('getAccessToken - isNotNull when loggedin', () async {

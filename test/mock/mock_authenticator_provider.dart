@@ -14,7 +14,7 @@ class MockAuthenticatorProvider extends AuthenticatorProvider {
   void close() {}
 
   @override
-  String? getUserName() {
-    return 'mockUser';
+  String? getUserInfo() {
+    return 'mock';
   }
 }

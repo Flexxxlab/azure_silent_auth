@@ -44,26 +44,26 @@ void main() {
       expect(await storageOperations.isTokenSavedLocally(), false);
     });
 
-    test('setUserName and getUserName', () async {
-      // Set user name
-      await storageOperations.setUserName('John Doe');
+    test('setUserInfo and getUserInfo', () async {
+      // Set user info
+      await storageOperations.setUserInfo('John Doe');
 
-      // Get user name
-      final userName = await storageOperations.getUserName();
+      // Get user info
+      final userInfo = await storageOperations.getUserInfo();
 
-      // Test if user name is correct
-      expect(userName, 'John Doe');
+      // Test if user info is correct
+      expect(userInfo, 'John Doe');
     });
 
     test('deleteUserName', () async {
-      // Set user name
-      await storageOperations.setUserName('John Doe');
+      // Set user info
+      await storageOperations.setUserInfo('John Doe');
 
-      // Delete user name
+      // Delete user info
       await storageOperations.deleteUserName();
 
-      // Test if user name is deleted
-      expect(await storageOperations.getUserName(), isNull);
+      // Test if user info is deleted
+      expect(await storageOperations.getUserInfo(), isNull);
     });
   });
 }

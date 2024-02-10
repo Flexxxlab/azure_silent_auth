@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:openid_client/openid_client_io.dart';
 
 // Abstract class defining the contract for an authenticator provider.
@@ -18,11 +20,16 @@ abstract class AuthenticatorProvider {
   /// Closes any resources or UI related to the authentication process.
   void close();
 
-  /// Retrieves the user name obtained during the authorization process.
+  /// Retrieves the user info obtained during the authorization process.
+  ///
+  /// Return:
+  /// -`String?`: an optional encoded string, which can be encoded into `OpenIdClaims`
+  ///            using `jsonDecode()` and `OpenIdClaims.fromJson()`.
   ///
   /// Note: Do not call this method before calling authorize().
-  String? getUserName() {
-    return credential?.idToken.claims.name;
+  String? getUserInfo() {
+    final claim = credential?.idToken.claims;
+    return (claim == null) ? null : _userInfoToEncodedString(claim);
   }
 
   /// Retrieves the token response obtained during the authorization process.
@@ -38,11 +45,9 @@ abstract class AuthenticatorProvider {
   Uri? generateLogoutUrl() {
     return credential?.generateLogoutUrl();
   }
-}
 
-// TO-DO
-// handle when and why the credentials is null.
-// what if the user calls this method before authorize.
-// can i create credentials without authorize and with just saved token?
-// is our refresh even needed?   _credential?.getTokenResponse(); seems to handle refresh in on itself.
-// Future<String> refreshToken(String refreshToken);
+  String _userInfoToEncodedString(UserInfo userInfo) {
+    final Map<String, dynamic> jsonMap = userInfo.toJson();
+    return jsonEncode(jsonMap);
+  }
+}

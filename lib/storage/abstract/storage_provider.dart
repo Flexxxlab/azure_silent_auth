@@ -12,11 +12,11 @@ abstract class StorageProvider {
   /// Deletes the locally stored token.
   Future<void> deleteToken();
 
-  /// Sets the user name locally.
-  Future<void> setUserName(String? name);
+  /// Sets the user info locally.
+  Future<void> setUserInfo(String? name);
 
-  /// Retrieves the locally stored user name.
-  Future<String?> getUserName();
+  /// Retrieves the locally stored encoded user info json.
+  Future<String?> getUserInfo();
 
   /// Deletes the locally stored user name.
   Future<void> deleteUserName();

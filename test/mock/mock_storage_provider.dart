@@ -20,11 +20,11 @@ class MockStorageProvider implements StorageProvider {
   Future<void> deleteToken() async => data.remove('token_response');
 
   @override
-  Future<void> setUserName(String? name) async =>
+  Future<void> setUserInfo(String? name) async =>
       data['user_name_from_token'] = name ?? '';
 
   @override
-  Future<String?> getUserName() async => data['user_name_from_token'];
+  Future<String?> getUserInfo() async => data['user_name_from_token'];
 
   @override
   Future<void> deleteUserName() async => data.remove('user_name_from_token');

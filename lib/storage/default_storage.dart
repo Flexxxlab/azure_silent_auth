@@ -50,20 +50,24 @@ class DefaultStorage implements StorageProvider {
     await _storage.delete(key: tokenResponseKey);
   }
 
-  /// Sets the user name in secure storage.
+  /// Sets the user info in secure storage.
   ///
   /// Parameters:
-  /// - `name`: The user name to be stored.
+  /// - `name`: The user info to be stored.
   @override
-  Future<void> setUserName(String? name) async {
+  Future<void> setUserInfo(String? name) async {
     await _storage.write(key: userNameKey, value: name);
   }
 
-  /// Reads the stored user name from secure storage.
+  /// Reads the stored user info from secure storage.
   ///
-  /// Returns the stored user name or `null` if not found.
+  /// Returns the stored user info or `null` if not found.
+  /// which can be encoded into `OpenIdClaims`
+  /// using `jsonDecode()` and `OpenIdClaims.fromJson()`.
+  /// `OpenIdClaims` implements `UserInfo` wher you will find
+  /// all the information about the logged in user
   @override
-  Future<String?> getUserName() async {
+  Future<String?> getUserInfo() async {
     return await _storage.read(key: userNameKey);
   }
 

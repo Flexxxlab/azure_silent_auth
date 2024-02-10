@@ -30,7 +30,7 @@ class AzureAuth implements TokenProvider {
   /// throws an exception if the TokenResponse from AuthenticatorProvider is null.
   ///
   /// Initiates the login process using the authenticator provider. Stores the accessToken and
-  /// user name locally using storage provider
+  /// user info locally using storage provider
   Future<void> login() async {
     await _authenticatorProvider.authorize();
 
@@ -42,8 +42,10 @@ class AzureAuth implements TokenProvider {
 
     await _storageProvider.setTokenResponse(_toEncodedString(tokenResponse));
 
-    final String? userName = _authenticatorProvider.getUserName();
-    await _storageProvider.setUserName(userName);
+    final String? userInfo = _authenticatorProvider.getUserInfo();
+    if (userInfo != null) {
+      await _storageProvider.setUserInfo(userInfo);
+    }
 
     _authenticatorProvider.close();
   }
