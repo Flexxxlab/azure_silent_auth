@@ -3,3 +3,6 @@ Login, Silent Login, Logout fully tested in iOS and Windows. Basic Authenticated
 
 ## 1.0.1
 Dependencies updated and some administrative changes.
+
+## 1.0.2
+Android tested and working.
