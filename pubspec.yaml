@@ -6,6 +6,7 @@ homepage: https://irshad365.github.io/azure_silent_auth/
 platforms:
   ios:
   windows:
+  android:
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
