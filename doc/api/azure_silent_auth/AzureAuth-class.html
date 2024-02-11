@@ -74,7 +74,7 @@
   <dt>Implemented types</dt>
   <dd>
     <ul class="comma-separated clazz-relationships">
-        <li><a href="../authenticator_abstract_token_provider/TokenProvider-class.html">TokenProvider</a></li>
+        <li><a href="../authenticator_abstract_token_provider/AzureAuthAbstract-class.html">AzureAuthAbstract</a></li>
     </ul>
   </dd>
         
@@ -149,6 +149,19 @@
 
 </dd>
 
+        <dt id="getUserInfo" class="callable">
+  <span class="name"><a href="../azure_silent_auth/AzureAuth/getUserInfo.html">getUserInfo</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../model/User-class.html">User</a>?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Retrieves stored user information from the secure storage.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
         <dt id="login" class="callable">
   <span class="name"><a href="../azure_silent_auth/AzureAuth/login.html">login</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
@@ -158,7 +171,7 @@
 </dt>
 <dd>
   throws an exception if the TokenResponse from AuthenticatorProvider is null.
-  
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
@@ -172,7 +185,7 @@
 <dd>
   Performs logout by deleting locally stored token and user name,
 and making a request to the logout endpoint if available.
-  
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
@@ -200,7 +213,7 @@ and making a request to the logout endpoint if available.
   Attempts to perform a silent login using a previously stored token response obtained from the <code>storageProvider</code>.
 Throws an error if the silent login fails. Use a try-catch block and call <code>login()</code> in the catch block
 to open the authentication page for the user.
-  
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 

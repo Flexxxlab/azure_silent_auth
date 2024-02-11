@@ -3,6 +3,8 @@ import 'dart:async';
 import 'credential_test_helper.dart';
 
 class MockAuthenticatorProvider extends AuthenticatorProvider {
+  String userInfo;
+  MockAuthenticatorProvider({required this.userInfo});
   @override
   Future<void> authorize({
     String? tokenResponseString,
@@ -15,6 +17,6 @@ class MockAuthenticatorProvider extends AuthenticatorProvider {
 
   @override
   String? getUserInfo() {
-    return 'mock';
+    return userInfo;
   }
 }
