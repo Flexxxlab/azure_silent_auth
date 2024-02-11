@@ -1,4 +1,3 @@
-import 'package:app/authentication_handler.dart';
 import 'package:app/detail_screen.dart';
 import 'package:app/main.dart';
 import 'package:azure_silent_auth/model.dart';
