@@ -6,3 +6,6 @@ Dependencies updated and some administrative changes.
 
 ## 1.0.2
 Android tested and working.
+
+## 2.0.0
+User info is available after login throuh `AzureAuth` instance.
