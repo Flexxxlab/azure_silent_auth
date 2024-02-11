@@ -12,7 +12,8 @@ void main() {
     late AuthenticatorProvider mockAuthenticatorProvider;
     setUp(() {
       mockStorageProvider = MockStorageProvider({});
-      mockAuthenticatorProvider = MockAuthenticatorProvider();
+      mockAuthenticatorProvider =
+          MockAuthenticatorProvider(userInfo: '{"sub":"mock sub"}');
 
       azureAuth = AzureAuth(
         authenticatorProvider: mockAuthenticatorProvider,
@@ -52,6 +53,13 @@ void main() {
 
       // Verifying that accessToken is not empty
       expect(await azureAuth.getAccessToken(), isNull);
+    });
+
+    test('getUserInfo - isNotNull when loggedin', () async {
+      // Verifying that user object mapping is happening
+      await azureAuth
+          .getUserInfo()
+          .then((value) => expect(value?.subject, 'mock sub'));
     });
   });
 }
