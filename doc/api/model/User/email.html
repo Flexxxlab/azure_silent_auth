@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the send method from the AuthenticatedClient class, for the Dart programming language.">
-  <title>send method - AuthenticatedClient class - authenticated_client library - Dart API</title>
+  <meta name="description" content="API docs for the email property from the User class, for the Dart programming language.">
+  <title>email property - User class - model library - Dart API</title>
 
 
   
@@ -29,11 +29,11 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">azure_silent_auth</a></li>
-    <li><a href="../../authenticated_client/authenticated_client-library.html">authenticated_client</a></li>
-    <li><a href="../../authenticated_client/AuthenticatedClient-class.html">AuthenticatedClient</a></li>
-    <li class="self-crumb">send method</li>
+    <li><a href="../../model/model-library.html">model</a></li>
+    <li><a href="../../model/User-class.html">User</a></li>
+    <li class="self-crumb">email property</li>
   </ol>
-  <div class="self-name">send</div>
+  <div class="self-name">email</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,50 +54,25 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="authenticated_client&#47;AuthenticatedClient-class-sidebar.html"
+      data-above-sidebar="model&#47;User-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">send</span> method 
+<h1><span class="kind-property">email</span> property 
 </h1></div>
 
-    <section class="multi-line-signature">
-      
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
+        <section class="multi-line-signature">
+          
+          <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?
+          <span class="name ">email</span>
+          <div class="features"><span class="feature">final</span></div>
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/1.2.0/http/StreamedResponse-class.html">StreamedResponse</a></span>&gt;</span></span>
-<span class="name ">send</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="send-param-request"><span class="type-annotation"><a href="https://pub.dev/documentation/http/1.2.0/http/BaseRequest-class.html">BaseRequest</a></span> <span class="parameter-name">request</span></span></li>
-</ol>)
+        </section>
+        
 
-      <div class="features"><span class="feature">override</span></div>
-
-    </section>
-    
-<section class="desc markdown">
-  <p>Sends an HTTP request with authentication headers.</p>
-<p>Adds the bearer token obtained from the <a href="../../authenticator_abstract_token_provider/AzureAuthAbstract-class.html">AzureAuthAbstract</a> to the "Authorization" header.
-Throws an exception if the access token is not available.</p>
-</section>
-
-
-    
+        
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-Future&lt;StreamedResponse&gt; send(BaseRequest request) async {
-  var accessToken = await _authenticationProvider.getAccessToken();
-
-  if (accessToken == null) {
-    throw Exception(&#39;Access token is not available.&#39;);
-  }
-
-  request.headers[&#39;Authorization&#39;] = &#39;Bearer $accessToken&#39;;
-
-  return await _inner.send(request);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">final String? email;</code></pre>
 </section>
 
 
@@ -113,13 +88,13 @@ Future&lt;StreamedResponse&gt; send(BaseRequest request) async {
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">azure_silent_auth</a></li>
-    <li><a href="../../authenticated_client/authenticated_client-library.html">authenticated_client</a></li>
-    <li><a href="../../authenticated_client/AuthenticatedClient-class.html">AuthenticatedClient</a></li>
-    <li class="self-crumb">send method</li>
+    <li><a href="../../model/model-library.html">model</a></li>
+    <li><a href="../../model/User-class.html">User</a></li>
+    <li class="self-crumb">email property</li>
 </ol>
 
 
-    <h5>AuthenticatedClient class</h5>
+    <h5>User class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 

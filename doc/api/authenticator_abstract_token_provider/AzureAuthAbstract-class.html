@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the AzureAuth class from the azure_silent_auth library, for the Dart programming language.">
-  <title>AzureAuth class - azure_silent_auth library - Dart API</title>
+  <meta name="description" content="API docs for the AzureAuthAbstract class from the token_provider library, for the Dart programming language.">
+  <title>AzureAuthAbstract class - token_provider library - Dart API</title>
 
 
   
@@ -29,10 +29,10 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">azure_silent_auth</a></li>
-    <li><a href="../azure_silent_auth/azure_silent_auth-library.html">azure_silent_auth</a></li>
-    <li class="self-crumb">AzureAuth class</li>
+    <li><a href="../authenticator_abstract_token_provider/authenticator_abstract_token_provider-library.html">token_provider</a></li>
+    <li class="self-crumb">AzureAuthAbstract class</li>
   </ol>
-  <div class="self-name">AzureAuth</div>
+  <div class="self-name">AzureAuthAbstract</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -53,16 +53,17 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="azure_silent_auth&#47;azure_silent_auth-library-sidebar.html"
-      data-below-sidebar="azure_silent_auth&#47;AzureAuth-class-sidebar.html">
+      data-above-sidebar="authenticator_abstract_token_provider&#47;authenticator_abstract_token_provider-library-sidebar.html"
+      data-below-sidebar="authenticator_abstract_token_provider&#47;AzureAuthAbstract-class-sidebar.html">
       <div>
-<h1><span class="kind-class">AzureAuth</span> class 
+<h1><span class="kind-class">AzureAuthAbstract</span> class 
+    <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Azure login provider implementing TokenProvider.</p>
+  <p>Abstract class defining the contract for an token provider.</p>
 </section>
 
 
@@ -71,14 +72,12 @@
         
 
         
-  <dt>Implemented types</dt>
-  <dd>
-    <ul class="comma-separated clazz-relationships">
-        <li><a href="../authenticator_abstract_token_provider/AzureAuthAbstract-class.html">AzureAuthAbstract</a></li>
-    </ul>
-  </dd>
         
 
+        <dt>Implementers</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="../azure_silent_auth/AzureAuth-class.html">AzureAuth</a></li>
+        </ul></dd>
 
 
         
@@ -92,11 +91,11 @@
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="AzureAuth" class="callable">
-          <span class="name"><a href="../azure_silent_auth/AzureAuth/AzureAuth.html">AzureAuth</a></span><span class="signature">(<span class="parameter" id="-param-authenticatorProvider">{<span>required</span> <span class="type-annotation"><a href="../authenticator_abstract_authenticator_provider/AuthenticatorProvider-class.html">AuthenticatorProvider</a></span> <span class="parameter-name">authenticatorProvider</span>, </span><span class="parameter" id="-param-storageProvider"><span class="type-annotation"><a href="../storage_abstract_storage_provider/StorageProvider-class.html">StorageProvider</a>?</span> <span class="parameter-name">storageProvider</span>}</span>)</span>
+        <dt id="AzureAuthAbstract" class="callable">
+          <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/AzureAuthAbstract.html">AzureAuthAbstract</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          Constructor to initialize the AzureAuth instance.
+          
         </dd>
     </dl>
   </section>
@@ -137,55 +136,54 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="getAccessToken" class="callable">
-  <span class="name"><a href="../azure_silent_auth/AzureAuth/getAccessToken.html">getAccessToken</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/getAccessToken.html">getAccessToken</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Retrieves the access token obtained during the authorization process.
-  <div class="features"><span class="feature">override</span></div>
+  Retrieves the access token.
+  
 
 </dd>
 
         <dt id="getUserInfo" class="callable">
-  <span class="name"><a href="../azure_silent_auth/AzureAuth/getUserInfo.html">getUserInfo</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/getUserInfo.html">getUserInfo</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../model/User-class.html">User</a>?</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Retrieves stored user information from the secure storage.
-  <div class="features"><span class="feature">override</span></div>
+  Retrives users information
+  
 
 </dd>
 
         <dt id="login" class="callable">
-  <span class="name"><a href="../azure_silent_auth/AzureAuth/login.html">login</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/login.html">login</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  throws an exception if the TokenResponse from AuthenticatorProvider is null.
-  <div class="features"><span class="feature">override</span></div>
+  Prescents the login screen and stores user data upon success
+  
 
 </dd>
 
         <dt id="logout" class="callable">
-  <span class="name"><a href="../azure_silent_auth/AzureAuth/logout.html">logout</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/logout.html">logout</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Performs logout by deleting locally stored token and user name,
-and making a request to the logout endpoint if available.
-  <div class="features"><span class="feature">override</span></div>
+  Logs out user from azure and deletes the stored user data
+  
 
 </dd>
 
@@ -203,17 +201,15 @@ and making a request to the logout endpoint if available.
 </dd>
 
         <dt id="silentLogin" class="callable">
-  <span class="name"><a href="../azure_silent_auth/AzureAuth/silentLogin.html">silentLogin</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../authenticator_abstract_token_provider/AzureAuthAbstract/silentLogin.html">silentLogin</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Attempts to perform a silent login using a previously stored token response obtained from the <code>storageProvider</code>.
-Throws an error if the silent login fails. Use a try-catch block and call <code>login()</code> in the catch block
-to open the authentication page for the user.
-  <div class="features"><span class="feature">override</span></div>
+  Uses stored access token and authenticate in the background
+  
 
 </dd>
 
@@ -270,12 +266,12 @@ to open the authentication page for the user.
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">azure_silent_auth</a></li>
-    <li><a href="../azure_silent_auth/azure_silent_auth-library.html">azure_silent_auth</a></li>
-    <li class="self-crumb">AzureAuth class</li>
+    <li><a href="../authenticator_abstract_token_provider/authenticator_abstract_token_provider-library.html">token_provider</a></li>
+    <li class="self-crumb">AzureAuthAbstract class</li>
 </ol>
 
 
-    <h5>azure_silent_auth library</h5>
+    <h5>token_provider library</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div>
 
