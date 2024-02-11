@@ -4,10 +4,10 @@ import 'package:http/http.dart';
 /// Custom HTTP client with authentication capabilities.
 ///
 /// This client automatically adds an "Authorization" header with the
-/// bearer token obtained from the specified [TokenProvider] to each HTTP request.
+/// bearer token obtained from the specified [AzureAuthAbstract] to each HTTP request.
 class AuthenticatedClient extends BaseClient {
   final Client _inner = Client();
-  late final TokenProvider _authenticationProvider;
+  late final AzureAuthAbstract _authenticationProvider;
 
   /// Constructor to initialize the AuthenticatedClient instance.
   ///
@@ -17,7 +17,7 @@ class AuthenticatedClient extends BaseClient {
 
   /// Sends an HTTP request with authentication headers.
   ///
-  /// Adds the bearer token obtained from the [TokenProvider] to the "Authorization" header.
+  /// Adds the bearer token obtained from the [AzureAuthAbstract] to the "Authorization" header.
   /// Throws an exception if the access token is not available.
   @override
   Future<StreamedResponse> send(BaseRequest request) async {

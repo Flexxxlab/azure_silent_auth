@@ -55,19 +55,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Details'),
-      ),
-      body: const Center(
-        child: Text('more content'),
-      ),
-    );
-  }
-}

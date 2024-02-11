@@ -1,4 +1,5 @@
 import 'package:azure_silent_auth/authenticator/default_authenticator.dart';
+import 'package:azure_silent_auth/model.dart';
 import 'package:azure_silent_auth/azure_silent_auth.dart';
 
 class AuthenticationHandler {
@@ -31,5 +32,15 @@ class AuthenticationHandler {
 
   Future<void> logout() async {
     await _microsoftAuthenticator.logout();
+  }
+
+  Future<String?> getUserName() async {
+    return await _microsoftAuthenticator
+        .getUserInfo()
+        .then((value) => value?.name);
+  }
+
+  Future<User?> getAllInfo() async {
+    return await _microsoftAuthenticator.getUserInfo();
   }
 }

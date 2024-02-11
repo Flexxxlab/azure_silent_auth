@@ -3,6 +3,7 @@ library azure_silent_auth;
 import 'dart:convert';
 import 'dart:developer';
 import 'package:azure_silent_auth/authenticator/abstract/authenticator_provider.dart';
+import 'package:azure_silent_auth/model.dart';
 import 'package:azure_silent_auth/authenticator/abstract/token_provider.dart';
 import 'package:azure_silent_auth/storage/abstract/storage_provider.dart';
 import 'package:azure_silent_auth/storage/default_storage.dart';
@@ -10,7 +11,7 @@ import 'package:http/http.dart' as http;
 import 'package:openid_client/openid_client_io.dart';
 
 /// Azure login provider implementing TokenProvider.
-class AzureAuth implements TokenProvider {
+class AzureAuth implements AzureAuthAbstract {
   final StorageProvider _storageProvider;
   final AuthenticatorProvider _authenticatorProvider;
 
@@ -31,6 +32,7 @@ class AzureAuth implements TokenProvider {
   ///
   /// Initiates the login process using the authenticator provider. Stores the accessToken and
   /// user info locally using storage provider
+  @override
   Future<void> login() async {
     await _authenticatorProvider.authorize();
 
@@ -53,6 +55,7 @@ class AzureAuth implements TokenProvider {
   /// Attempts to perform a silent login using a previously stored token response obtained from the `storageProvider`.
   /// Throws an error if the silent login fails. Use a try-catch block and call `login()` in the catch block
   /// to open the authentication page for the user.
+  @override
   Future<void> silentLogin() async {
     String? savedTokenResponseString =
         await _storageProvider.readTokenResponse();
@@ -72,6 +75,7 @@ class AzureAuth implements TokenProvider {
 
   /// Performs logout by deleting locally stored token and user name,
   /// and making a request to the logout endpoint if available.
+  @override
   Future<void> logout() async {
     await _storageProvider.deleteToken();
     await _storageProvider.deleteUserName();
@@ -92,6 +96,18 @@ class AzureAuth implements TokenProvider {
       return null;
     }
     return _toEncodedString(tokenResponse);
+  }
+
+  /// Retrieves stored user information from the secure storage.
+  @override
+  Future<User?> getUserInfo() async {
+    final userInfoString = _authenticatorProvider.getUserInfo();
+    if (userInfoString == null) {
+      return null;
+    }
+    final Map<String, dynamic> jsonMap = jsonDecode(userInfoString);
+    final claims = OpenIdClaims.fromJson(jsonMap);
+    return User.fromUserInfo(claims);
   }
 
   // Converts a TokenResponse object into an encoded string.
