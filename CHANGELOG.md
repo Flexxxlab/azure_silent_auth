@@ -9,3 +9,6 @@ Android tested and working.
 
 ## 2.0.0
 User info is available after login throuh `AzureAuth` instance.
+
+## 2.0.1
+Android token retrieval from storage issues fixed.
