@@ -15,7 +15,11 @@ class DefaultStorage implements StorageProvider {
   /// - `storage`: Optional parameter to provide a custom instance of FlutterSecureStorage.
   ///              Defaults to a new instance if no value is provided.
   DefaultStorage({FlutterSecureStorage? storage})
-      : _storage = storage ?? const FlutterSecureStorage();
+      : _storage = storage ??
+            const FlutterSecureStorage(
+                aOptions: AndroidOptions(
+              encryptedSharedPreferences: true,
+            ));
 
   /// Checks if the access token is saved locally.
   ///
