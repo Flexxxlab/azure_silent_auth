@@ -12,3 +12,6 @@ User info is available after login throuh `AzureAuth` instance.
 
 ## 2.0.1
 Android token retrieval from storage issues fixed.
+
+## 2.0.2
+Logout Url exposed for users to access
