@@ -115,4 +115,9 @@ class AzureAuth implements AzureAuthAbstract {
     final Map<String, dynamic> jsonMap = tokenResponse.toJson();
     return jsonEncode(jsonMap);
   }
+
+  @override
+  Uri? logoutUrl() {
+    return _authenticatorProvider.generateLogoutUrl();
+  }
 }

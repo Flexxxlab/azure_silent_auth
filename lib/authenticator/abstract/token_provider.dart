@@ -16,4 +16,7 @@ abstract class AzureAuthAbstract {
 
   /// Logs out user from azure and deletes the stored user data
   Future<void> logout();
+
+  /// Generates logout url for web logout
+  Uri? logoutUrl();
 }
