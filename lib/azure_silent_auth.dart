@@ -1,4 +1,4 @@
-library azure_silent_auth;
+library;
 
 import 'dart:convert';
 import 'dart:developer';
