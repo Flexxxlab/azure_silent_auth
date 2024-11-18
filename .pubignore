@@ -2,3 +2,4 @@
 .flutter-plugins-dependencies
 .dart_tool/package_config.json
 examples/app/pubspec.lock
+.dart_tool/package_config_subset
