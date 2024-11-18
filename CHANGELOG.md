@@ -15,3 +15,6 @@ Android token retrieval from storage issues fixed.
 
 ## 2.0.2
 Logout Url exposed for users to access
+
+## 2.0.3
+Dependency upgrade and admin updates
