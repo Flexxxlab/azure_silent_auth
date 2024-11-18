@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:azure_silent_auth/authenticator/abstract/authenticator_provider.dart';
 import 'package:openid_client/openid_client_io.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 /// Default implementation of AuthenticatorProvider.
 class DefaultAuthenticator extends AuthenticatorProvider {
@@ -17,7 +17,7 @@ class DefaultAuthenticator extends AuthenticatorProvider {
   // if launch mode is `platformDefault` for macOS.
   // if this doesn't works for you, create an appropriate `AuthenticatorProvider`
   // and use it in `AzureAuth`
-  final _launchMode = LaunchMode.inAppBrowserView;
+  final _launchMode = url_launcher.LaunchMode.inAppBrowserView;
 
   /// Constructor to initialize the DefaultAuthenticator instance.
   ///
@@ -52,8 +52,8 @@ class DefaultAuthenticator extends AuthenticatorProvider {
       urlLauncher(String urlString) async {
         var url = '$urlString$_query';
         var uri = Uri.parse(url);
-        if (await canLaunchUrl(uri) || Platform.isAndroid) {
-          await launchUrl(uri, mode: _launchMode);
+        if (await url_launcher.canLaunchUrl(uri) || Platform.isAndroid) {
+          await url_launcher.launchUrl(uri, mode: _launchMode);
         } else {
           throw 'Could not launch $url';
         }
@@ -77,8 +77,8 @@ class DefaultAuthenticator extends AuthenticatorProvider {
   /// This method is called to close the InAppWebView, if applicable.
   @override
   void close() {
-    supportsCloseForLaunchMode(_launchMode).then((value) => {
-          if (value) {closeInAppWebView()}
+    url_launcher.supportsCloseForLaunchMode(_launchMode).then((value) => {
+          if (value) {url_launcher.closeInAppWebView()}
         });
   }
 
