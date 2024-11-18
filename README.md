@@ -52,4 +52,4 @@ Please refer example app to see how this instance can be used in different scena
 ## Additional information
 
 - Contributions: Contributions are welcome! Open an issue or submit a pull request.
-- issues: If you encounter any issues, please feel free to reach out to **Email:** irshad365@gmail.com
+- issues: If you encounter any issues, please feel free to reach out to **Email:** irshad365@flexxxlab.com
